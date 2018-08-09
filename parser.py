@@ -14,7 +14,6 @@ def get_html(url):
 def get_data_items(html):
     soup = BeautifulSoup(html, 'lxml')
     items = soup.find_all('a', {'class' : 'link link_outer_yes link_theme_outer path__item i-bem'})
-
     return [a.get('href') for a in items]
 
 
