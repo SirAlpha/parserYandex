@@ -15,18 +15,7 @@ def get_html(url):
 def get_data_items(html):
     soup = BeautifulSoup(html, 'lxml')
     items = soup.find_all('a', {'class' : 'link link_outer_yes link_theme_outer path__item i-bem'})
-    # return [a.get('href') for a in items]
-    for a in items:
-        href_soup = a.get('href')
-        data = {'url': a,
-                'href': href_soup}
-        write_data_csv(data)
-
-
-def write_data_csv(data):
-    with open('data.csv', 'a') as file:
-        writer = csv.writer(file)
-        writer.writerow((data['url']))
+    return [a.get('href') for a in items]
 
 
 def main():
