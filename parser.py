@@ -22,7 +22,7 @@ def main():
     url = 'https://yandex.ru/search/?clid=9582&text=скачать&lr=118890&p=1'
     print('Парсим следующий url:\n')
     print(url)
-    print(get_data_items(get_html(url)))
+    print('Результат: \n', get_data_items(get_html(url)))
 
 
 if __name__ == '__main__':
